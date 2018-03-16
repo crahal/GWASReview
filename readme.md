@@ -1,5 +1,6 @@
-<div style="text-align:center"><img src="https://github.com/crahal/anatomyofGWAS/blob/master/Figures/helix.png" width="850"/></div>
-
+<p align="center">
+  <img src="https://github.com/crahal/anatomyofGWAS/blob/master/Figures/helix.png" width="550"/>
+</p>
 
 ### The Anatomy of GWAS
 
