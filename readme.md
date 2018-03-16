@@ -12,6 +12,9 @@ This is a repository to accompany the paper 'The Anatomy of Genome Wide Associat
 
 As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependancies detailed in requirements.txt (pip install the  [requirements.txt](http:\\github.com\crahal\anatomyofGWAS\requirements.txt)). We strongly recommend [Anaconda](http:\\continuum.io\anaconda). Comment out cell [??] for any issues with basemap, where condaforge --install basemap might be required for Windows. For those unfamiliar with juputer notebooks,  just ```cd``` to the cloned directory, and then run the ```jupyter notebook``` command in the terminal to launch the notebook.
 
+### Running the Code
+
+This code is operating system independent and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the anatomyofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook.
 
 #### Repository Structure
 
