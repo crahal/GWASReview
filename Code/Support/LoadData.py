@@ -119,8 +119,8 @@ def load_gwas_cat():
     cleaner_broad = pd.read_excel(os.path.abspath(
                                   os.path.join('__file__', '../..', 'Data',
                                                'Support',
-                                               'dict_replacer_broad.xlsx')),
-                                  header=0, index_col=False)
+                                               'dict_replacer_broad.tsv')),
+                                  sep='\t', header=0, index_col=False)
     Cat_Anc = pd.merge(Cat_Anc, cleaner_broad, how='left',
                        on='BROAD ANCESTRAL')
     Cat_Anc = Cat_Anc[Cat_Anc['N'].notnull()]  # jankys?
