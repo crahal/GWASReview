@@ -1,3 +1,6 @@
+<div style="text-align:center"><img src="https://github.com/crahal/anatomyofGWAS/blob/master/Figures/helix.png" width="850"/></div>
+
+
 ### The Anatomy of GWAS
 
 [![Generic badge](https://img.shields.io/badge/Python-3.6-<red>.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/)
