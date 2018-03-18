@@ -116,7 +116,7 @@ def load_gwas_cat():
     Cat_Anc_byN = Cat_Anc_byN.reset_index()
     Cat_Anc_byN = pd.merge(Cat_Anc_byN, Cat_Stud[[
         'STUDY ACCESSION', 'DATE']], how='left', on='STUDY ACCESSION')
-    cleaner_broad = pd.read_excel(os.path.abspath(
+    cleaner_broad = pd.read_csv(os.path.abspath(
                                   os.path.join('__file__', '../..', 'Data',
                                                'Support',
                                                'dict_replacer_broad.tsv')),
