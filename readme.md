@@ -27,8 +27,6 @@ This code is operating system independent (through the ``os`` module) and should
 
 Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki/Tree_%28Unix%29).
 
-
-
 ├── Code  
 │   ├── Notebook.ipynb  
 │   └── Support  
@@ -98,14 +96,11 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │   ├── ContinentOfRecruitment.csv  
 │   └── Funder_Ancestry.csv  
 
-
-
-
-#### Versioning
+### Versioning
 This is a prototype version prior to full release and publication of the associated paper.
 
-##### License
+### License
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license. It comes without any warranty, to the extent permitted by applicable law.
 
-#### Acknowledgments
+### Acknowledgments
 Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė.
