@@ -113,9 +113,9 @@ def build_abstract(papers):
         writer = csv.writer(csv_file, delimiter=',')
         writer.writerow(['PUBMEDID', 'Abstract'])
         for i, paper in enumerate(papers['PubmedArticle']):
-            AbstractList = paper['MedlineCitation']['Article']['Abstract']
-            PUBMEDID = paper['MedlineCitation']['PMID']
             try:
+                AbstractList = paper['MedlineCitation']['Article']['Abstract']
+                PUBMEDID = paper['MedlineCitation']['PMID']
                 Abstract = AbstractList['AbstractText']
             except KeyError:
                 Abstract = 'N/A'
