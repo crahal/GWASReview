@@ -81,22 +81,22 @@ def build_funder(papers):
                 for grant in range(0, len(GrantList)):
                     try:
                         PUBMEDID = paper['MedlineCitation']['PMID']
-                    except ValueError:
+                    except KeyError:
                         PUBMEDID = 'N/A'
                     try:
                         Agency = GrantList[grant]['Agency']
-                    except ValueError:
+                    except KeyError:
                         Agency = 'N/A'
                     try:
                         GrantCountry = GrantList[grant]['Country']
-                    except ValueError:
+                    except KeyError:
                         GrantCountry = 'N/A'
                     try:
                         GrantID = GrantList[grant]['GrantID']
-                    except ValueError:
+                    except KeyError:
                         GrantID = 'N/A'
                     writer.writerow([PUBMEDID, Agency, GrantCountry, GrantID])
-            except ValueError:
+            except KeyError:
                 pass
     print('Built a database of Funders from list of PUBMEDID IDs')
 
@@ -117,7 +117,7 @@ def build_abstract(papers):
             PUBMEDID = paper['MedlineCitation']['PMID']
             try:
                 Abstract = AbstractList['AbstractText']
-            except ValueError:
+            except KeyError:
                 Abstract = 'N/A'
             writer.writerow([PUBMEDID, ', '.join(Abstract)])
     print('Built a database of Abstracts from list of PUBMEDID IDs')
@@ -144,7 +144,7 @@ def build_citation(id_list, emailaddress):
             citationcountout.write(
                 str(pubmedid) + ',' +
                 str(len(results[0]['LinkSetDb'][0]['Link'])) + '\n')
-        except ValueError:
+        except KeyError:
             citationcountout.write(str(pubmedid) + ',' + '0\n')
         time.sleep(1.5)
     citationcountout.close()
