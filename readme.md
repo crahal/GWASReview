@@ -21,7 +21,7 @@ Comment out cell [14] for any issues with basemap compatibility. For those unfam
 
 ### Running the Code
 
-This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the anatomyofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook.
+This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the anatomyofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A precompiled .html is also contained in this repo. 
 
 #### Repository Structure
 
