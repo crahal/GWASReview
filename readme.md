@@ -9,7 +9,7 @@
 
 ### Introduction
 
-This is a repository to accompany the paper 'The Anatomy of Genome Wide Association Studies' by M.C. Mills and C.Rahal. For a copy of the working paper, please e-mail [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 01/03/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal updates and adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
+This is a repository to accompany the paper 'The Anatomy of Genome Wide Association Studies' by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 01/03/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
 
 
 ### Prerequisites
@@ -25,7 +25,7 @@ This code is operating system independent (through the ``os`` module) and should
 
 #### Repository Structure
 
-Repo structure made using the Linux ```tree``` [utility](https://en.wikipedia.org/wiki/Tree_%28Unix%29).
+Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki/Tree_%28Unix%29).
 
 
 
