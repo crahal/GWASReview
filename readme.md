@@ -9,7 +9,7 @@
 
 ### Introduction
 
-This is a repository to accompany the paper 'The Anatomy of Genome Wide Association Studies' by M.C. Mills and C.Rahal. For a copy of the working paper, please e-mail *melinda dot mills at sociology dot ox dot ac dot uk*. A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 01/03/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal updates and adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
+This is a repository to accompany the paper 'The Anatomy of Genome Wide Association Studies' by M.C. Mills and C.Rahal. For a copy of the working paper, please e-mail [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 01/03/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal updates and adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
 
 
 ### Prerequisites
@@ -21,7 +21,7 @@ Comment out cell [14] for any issues with basemap compatibility. For those unfam
 
 ### Running the Code
 
-This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with jupyter notebooks,  just ```cd``` to the the Code subdirectory in the anatomyofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A precompiled .html is also contained in this repo.
+This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the anatomyofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A precompiled .html is also contained in this repo.
 
 #### Repository Structure
 
