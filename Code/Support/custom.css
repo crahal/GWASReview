@@ -1,0 +1,249 @@
+
+/* FONTS */
+
+@font-face {
+ font-family: 'sf-display';
+ font-weight: normal;
+ font-style: normal;
+ src: url('fonts/sf-display/SanFranciscoDisplay-Regular.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-display';
+ font-weight: normal;
+ font-style: italic;
+ src: url('fonts/sf-display/SanFranciscoDisplay-RegularItalic.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-display';
+ font-weight: bold;
+ font-style: normal;
+ src: url('fonts/sf-display/SanFranciscoDisplay-Bold.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-display';
+ font-weight: bold;
+ font-style: italic;
+ src: url('fonts/sf-display/SanFranciscoDisplay-BoldItalic.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'cmu-text-decorated';
+ font-weight: normal;
+ font-style: italic;
+ src: url('fonts/cmu-text/CMUSerif-UprightItalic.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'cmu-text';
+ font-weight: normal;
+ font-style: normal;
+ src: url('fonts/cmu-text/CMUSerif-Roman.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'cmu-text';
+ font-weight: normal;
+ font-style: italic;
+ src: url('fonts/cmu-text/CMUSerif-Italic.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'cmu-text';
+ font-weight: bold;
+ font-style: normal;
+ src: url('fonts/cmu-text/CMUSerif-BoldNonextended.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'cmu-text';
+ font-weight: bold;
+ font-style: italic;
+ src: url('fonts/cmu-text/CMUSerif-BoldItalic.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-mono';
+ font-weight: normal;
+ font-style: normal;
+ src: url('fonts/sf-mono/SFMono-Regular.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-mono';
+ font-weight: normal;
+ font-style: italic;
+ src: url('fonts/sf-mono/SFMono-RegularItalic.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-mono';
+ font-weight: bold;
+ font-style: normal;
+ src: url('fonts/sf-mono/SFMono-Bold.otf') format('opentype');
+}
+
+@font-face {
+ font-family: 'sf-mono';
+ font-weight: bold;
+ font-style: italic;
+ src: url('fonts/sf-mono/SFMono-BoldItalic.otf') format('opentype');
+}
+
+
+div.input_area {
+    border-color: rgba(0,0,0,0.15);
+    background-color: #fdfdfd;
+    font-size: 12pt;
+    line-height: 115%
+    padding-left: 10px;
+}
+
+div.output_area {
+    border-color: rgba(0,0,0,0.15);
+    background-color: #ffffff;
+    font-size: 11pt;
+    line-height: 115%
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+body { background-color: #ffffff !important; }
+.container { width:75% !important; }
+div.text_cell {
+    max-width: 110%; /* instead of 100%, */
+    line-height: 145%;
+    font-size: 14pt;
+}
+
+div.code_cell { background-color: #ffffff;    color: #000000; font-size: 12pt; line-height: 120%}
+
+
+div.text_cell_render h1,
+div.text_cell_render h2,
+div.text_cell_render h3,
+div.text_cell_render h4,
+div.text_cell_render h5,
+div.text_cell_render h6 {
+    font-weight: 300;
+}
+
+div.text_cell_render h1 {
+    font-size: 24pt;
+}
+
+div.text_cell_render h2 {
+    font-size: 18pt;
+}
+
+div.text_cell_render h3 {
+    font-size: 16pt;
+}
+
+.rendered_html pre,
+.rendered_html code {
+    font-size: medium;
+}
+
+.rendered_html ol {
+    list-style:decimal;
+    margin: 1em 2em;
+}
+
+
+
+.prompt.input_prompt {
+    color: rgba(0,0,0,0.5);
+}
+
+.cell.command_mode.selected {
+    border-color: rgba(0,0,0,0.1);
+}
+
+.cell.edit_mode.selected {
+    border-color: rgba(0,0,0,0);
+    box-shadow: 0px 0px 0px #ffffff;
+    -webkit-box-shadow: 0px 0px 0px #ffffff;
+}
+
+div.output_scroll {
+    -webkit-box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+    border-radious: 2px;
+}
+
+#menubar .navbar-inner {
+    background: #fff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    font-family: lato;
+    font-weight: 400;
+}
+
+.navbar-fixed-top .navbar-inner,
+.navbar-static-top .navbar-inner {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border: none;
+}
+
+div#notebook_panel {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-top: none;
+}
+
+div#notebook {
+    border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+#menubar .navbar .navbar-inner,
+.toolbar-inner {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#checkpoint_status,
+#autosave_status {
+    color: rgba(0,0,0,0.5);
+}
+
+#header {
+    font-family: lato;
+}
+
+#notebook_name {
+    font-weight: 200;
+}
+
+#site * .btn {
+    background: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+.cm-s-ipython .CodeMirror-linenumber {
+ color: #8b0000 ;
+}
+.CodeMirror-sizer {
+ margin-left: 40px;
+}
+.CodeMirror-linenumber,
+div.CodeMirror-linenumber,
+.CodeMirror-gutter.CodeMirror-linenumberdiv.CodeMirror-gutter.CodeMirror-linenumber {
+ padding-right: 1px;
+ margin-left: 0px;
+ margin: 0px;
+ width: 26px !important;
+ padding: 0px;
+ text-align: right;
+}
+.CodeMirror-linenumber {
+ color: #8b0000 ;
+}
