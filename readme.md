@@ -1,34 +1,34 @@
 <p align="center">
-  <img src="https://github.com/crahal/anatomyofGWAS/blob/master/Figures/helix.png" width="550"/>
+  <img src="https://github.com/crahal/architectureGWAS/blob/master/Figures/helix.png" width="550"/>
 </p>
 
-# The Anatomy of GWAS
+# The Architecture of GWAS
 
 [![Generic badge](https://img.shields.io/badge/Python-3.6-<red>.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/License-MIT-blue.svg)](https://shields.io/)  [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/)
 
 
 ### Introduction
 
-This is a repository to accompany the paper 'The Anatomy of Genome Wide Association Studies' by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 01/03/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
+This is a repository to accompany the paper 'The Architecture of Genome Wide Association Studies' by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 01/03/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
 
 
 ### Prerequisites
 
-As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/anatomyofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). If you don't want to ```pip install -r requirements.txt```, you will at least need ```conda install basemap -c conda-forge```, ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp``` and ```pip install wordcloud```.
+As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/architectureofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). If you don't want to ```pip install -r requirements.txt```, you will at least need ```conda install basemap -c conda-forge```, ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp``` and ```pip install wordcloud```.
 
 
 Comment out cell [14] for any issues with basemap compatibility. For those unfamiliar with jupyuter notebooks,  just ```cd``` to the cloned directory, and then run the ```jupyter notebook``` command in the terminal to launch the notebook.
 
 ### Running the Code
 
-This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the anatomyofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A precompiled .html is also contained in this repo.
+This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the architectureofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A precompiled .html is also contained in this repo.
 
 ### Repository Structure
 
 Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki/Tree_%28Unix%29).
 
 ├── Code  
-│   ├── Notebook.ipynb  
+│   ├── architecturefGWAS_Notebook.ipynb  
 │   └── Support  
 │       ├── Additional.py  
 │       ├── Ancestry.py  
@@ -89,6 +89,7 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │       └── GWAS_Popularity.svg  
 ├── piprequirements.txt  
 ├── readme.md  
+├── architecturefGWAS_Notebook.html
 ├── Tables  
 │   ├── Authors.csv  
 │   ├── Broad_Ancestral_Full.csv  
