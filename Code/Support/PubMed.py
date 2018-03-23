@@ -76,8 +76,8 @@ def build_funder(papers):
         writer = csv.writer(csv_file, delimiter=',')
         writer.writerow(['PUBMEDID', 'Agency', 'GrantCountry', 'GrantID'])
         for i, paper in enumerate(papers['PubmedArticle']):
-            GrantList = paper['MedlineCitation']['Article']['GrantList']
             try:
+                GrantList = paper['MedlineCitation']['Article']['GrantList']
                 for grant in range(0, len(GrantList)):
                     try:
                         PUBMEDID = paper['MedlineCitation']['PMID']
@@ -144,7 +144,7 @@ def build_citation(id_list, emailaddress):
             citationcountout.write(
                 str(pubmedid) + ',' +
                 str(len(results[0]['LinkSetDb'][0]['Link'])) + '\n')
-        except KeyError:
+        except IndexError:
             citationcountout.write(str(pubmedid) + ',' + '0\n')
         time.sleep(1.5)
     citationcountout.close()
