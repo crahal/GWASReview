@@ -81,22 +81,22 @@ def build_funder(papers):
                 for grant in range(0, len(GrantList)):
                     try:
                         PUBMEDID = paper['MedlineCitation']['PMID']
-                    except KeyError:
+                    except:
                         PUBMEDID = 'N/A'
                     try:
                         Agency = GrantList[grant]['Agency']
-                    except KeyError:
+                    except:
                         Agency = 'N/A'
                     try:
                         GrantCountry = GrantList[grant]['Country']
-                    except KeyError:
+                    except:
                         GrantCountry = 'N/A'
                     try:
                         GrantID = GrantList[grant]['GrantID']
-                    except KeyError:
+                    except:
                         GrantID = 'N/A'
                     writer.writerow([PUBMEDID, Agency, GrantCountry, GrantID])
-            except KeyError:
+            except:
                 pass
     print('Built a database of Funders from list of PUBMEDID IDs')
 
