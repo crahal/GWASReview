@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/crahal/architectureGWAS/blob/master/Figures/helix.png" width="550"/>
+  <img src="https://github.com/crahal/architectureofGWAS/blob/master/Figures/helix.png" width="550"/>
 </p>
 
 # The Architecture of GWAS
