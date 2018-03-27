@@ -17,7 +17,7 @@ This is a repository to accompany the paper 'The Architecture of Genome Wide Ass
 As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/architectureofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). If you don't want to ```pip install -r requirements.txt```, you will at least need ```conda install basemap -c conda-forge```, ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp``` and ```pip install wordcloud```.
 
 
-Comment out cell [14] for any issues with basemap compatibility. For those unfamiliar with jupyuter notebooks,  just ```cd``` to the cloned directory, and then run the ```jupyter notebook``` command in the terminal to launch the notebook.
+Comment out cell [14] for any issues with basemap compatibility.
 
 ### Running the Code
 
