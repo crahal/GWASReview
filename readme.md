@@ -30,13 +30,13 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 ├── src  
 │   ├── GWASReview_Notebook.ipynb  
 │   └── Support  
-│       ├── Additional.py
-│       ├── Analysis.py
-│       ├── Ancestry.py
-│       ├── Figures.py
-│       ├── LoadData.py  
-│       ├── PubMed.py  
-│       └── Robustness.py
+│   │   ├── Additional.py  
+│   │   ├── Analysis.py  
+│   │   ├── Ancestry.py  
+│   │   ├── Figures.py  
+│   │   ├── LoadData.py  
+│   │   ├── PubMed.py  
+│   │   └── Robustness.py  
 ├── data  
 │   ├── Catalogue  
 │   │   ├── Raw  
@@ -61,23 +61,23 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │       ├── Collectives  
 │       │   ├── Pubmed_CollectiveInfo_Dictionary.csv  
 │       │   └── Pubmed_CollectiveInfo_unverified.csv  
-│       ├── dict_replacer_broad.xlsx
+│       ├── dict_replacer_broad.xlsx  
 │       ├── doublehelix_mask.png  
-│       └── native_classifier_dictionary.csv
+│       └── native_classifier_dictionary.csv  
 ├── Figures  
 │   ├── pdf  
 │   │   └── helix_wordcloud_1250_5000_black.pdf  
-│   ├── png
-│   │   └── helix.png
+│   ├── png  
+│   │   └── helix.png  
 │   └── svg  
-│       ├── Figure_1.svg
-│       ├── Figure_2.svg
-│       ├── Figure_3.svg
-│       ├── Figure_3_Blues.svg
-│       ├── Figure_4.svg
-│       ├── Figure_4_NoCommas.svg
-│       ├── Sup_Figure_1_Commas.svg
-│       └── Sup_Figure_1_NoCommas.svg
+│       ├── Figure_1.svg  
+│       ├── Figure_2.svg  
+│       ├── Figure_3.svg  
+│       ├── Figure_3_Blues.svg  
+│       ├── Figure_4.svg  
+│       ├── Figure_4_NoCommas.svg  
+│       ├── Sup_Figure_1_Commas.svg  
+│       └── Sup_Figure_1_NoCommas.svg  
 ├── piprequirements.txt  
 ├── readme.md  
 ├── GWAS_Review.html
@@ -85,9 +85,9 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │   ├── Authors.csv  
 │   ├── Broad_Ancestral_Full.csv  
 │   ├── Broad_Ancestral_NoNR.csv  
-│   ├── Broad_Ancestral_Time_NoNR_PC.csv
-│   ├── ContinentOfRecruitment.csv
-│   └── CountryOfRecruitment.csv
+│   ├── Broad_Ancestral_Time_NoNR_PC.csv  
+│   ├── ContinentOfRecruitment.csv  
+│   └── CountryOfRecruitment.csv  
 
 ### Versioning
 This is a prototype version prior to full release and publication of the associated paper.
