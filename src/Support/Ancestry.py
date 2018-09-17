@@ -8,35 +8,35 @@ def ancestry_cleaner(row, field):
     row: the row of the ancestry DataFrame
     field: the field of the ancestry dataframe ('initial' or 'replication')
     """
-    temp = re.sub(r'(\d+),?([\d+]?)', r'\1\2', row[field])
-    temp = re.sub(r'(\d+)', r'; \1', temp)
-    temp = punctuation_cleaner(temp)
-    temp = remove_lower(temp)
-    temp = remove_lower(temp)
-    temp = temp.replace('  ', ' ')
-    temp = temp.replace('  ', ' ')
-    temp = list_remover(temp)
-    temp = dict_replace(temp)
+    free_text = re.sub(r'(\d+),?([\d+]?)', r'\1\2', row[field])
+    free_text = re.sub(r'(\d+)', r'; \1', free_text)
+    free_text = punctuation_cleaner(free_text)
+    free_text = remove_lower(free_text)
+    free_text = remove_lower(free_text)
+    free_text = free_text.replace('  ', ' ')
+    free_text = free_text.replace('  ', ' ')
+    free_text = list_remover(free_text)
+    free_text = dict_replace(free_text)
     try:
-        if temp[-1] == ';':
-            temp = temp[:-1]
+        if free_text[-1] == ';':
+            free_text = free_text[:-1]
     except ValueError:
         pass
-    cleanedtemp = []
-    for ancestry in temp[1:].split(';'):
+    cleaned = []
+    for ancestry in free_text[1:].split(';'):
         if " and" in ancestry.strip()[-4:]:
-            cleanedtemp.append(ancestry.replace(' and', '').strip())
+            cleaned.append(ancestry.replace(' and', '').strip())
         elif " or" in ancestry.strip()[-4:]:
-            cleanedtemp.append(ancestry.replace(' or', '').strip())
+            cleaned.append(ancestry.replace(' or', '').strip())
         else:
-            cleanedtemp.append(ancestry.strip())
-    cleanedtemp = ';'.join(cleanedtemp)
-    cleanedtemp = cleanedtemp.replace(';', ' ; ')
-    for word in cleanedtemp.split(' '):
+            cleaned.append(ancestry.strip())
+    cleaned = ';'.join(cleaned)
+    cleaned = cleaned.replace(';', ' ; ')
+    for word in cleaned.split(' '):
         if (word.isalpha()) and (len(word) < 3) and word != "or":
-            cleanedtemp = cleanedtemp.replace(word, '')
-    cleanedtemp = re.sub(r';\s+;', ';', cleanedtemp)
-    return cleanedtemp
+            cleaned = cleaned.replace(word, '')
+    cleaned = re.sub(r';\s+;', ';', cleaned)
+    return cleaned
 
 
 def dict_replace(text):
@@ -94,7 +94,7 @@ def dict_replace(text):
                    'Seychelles': 'Seychellois',
                    'South Tyrolean': 'South Tyrol',
                    'Europen': 'European',
-                   '≥':''}
+                   '≥': ''}
     for key in replacedict:
         if key in text:
             text = text.replace(key, replacedict[key])
@@ -130,34 +130,34 @@ def list_remover(text):
                   'EVE', 'Germain', 'Boraska', 'Cases', 'HapMap', 'vWF', 'HDL',
                   'LDL', ' Mild', 'Cognitive', 'Impairment', 'Sarcoidosis',
                   'Yu Zhi', 'Lymphoma', 'Impairment', 'Type', 'Kuru',
-                  'Frontemporal','Erasmus','Barrett','Lofgren', 'Hashimoto',
-                  'Family','Multiple']
+                  'Frontemporal', 'Erasmus', 'Barrett', 'Lofgren', 'Hashimoto',
+                  'Family', 'Multiple']
     for word in removelist:
         text = text.replace(word, '')
     return text
 
 
-def remove_lower(temp):
+def remove_lower(free_text):
     """ remove lowercase letters (assumed to not be associated with
     countries, races or ancestries.)
 
     Keyword arguements:
     text: the free text string prior to splitting
     """
-    temp = temp.replace('up to', '')
-    for word in temp.split(' '):
+    free_text = free_text.replace('up to', '')
+    for word in free_text.split(' '):
         if (word.title() != word.strip()):
             try:
                 float(word)
             except ValueError:
                 if ';' in word:
-                    temp = temp.replace(word, ';').strip()
+                    free_text = free_text.replace(word, ';').strip()
                 elif (';' not in word) and (word != "and") and (word != "or"):
-                    if temp.find(word) == 0:
-                        temp = temp.replace(word + ' ', ' ')
+                    if free_text.find(word) == 0:
+                        free_text = free_text.replace(word + ' ', ' ')
                     else:
-                        temp = temp.replace(' ' + word, ' ')
-    return temp.strip()
+                        free_text = free_text.replace(' ' + word, ' ')
+    return free_text.strip()
 
 
 def punctuation_cleaner(temp):

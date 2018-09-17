@@ -1,10 +1,13 @@
 import re
+import csv
 import pandas as pd
+from datetime import datetime
 
 
 def simple_facts(Cat_Studies, Cat_Ancestry,
                  Cat_Ancestry_groupedbyN,
-                 Cat_Full, AuthorMaster):
+                 Cat_Full, AuthorMaster,
+                 mostrecentgwascatdate):
     """ Print out some simple facts from the GWAS Catalog """
 
     print('There are currently: ' +
@@ -38,6 +41,9 @@ def simple_facts(Cat_Studies, Cat_Ancestry,
     print('However, in 2017, ' + Cat_Studies[Cat_Studies['DATE'].str.contains(
           '2017')]['JOURNAL'].mode()[0] +
           ' published the largest number of GWAS papers')
+    print('So far, in 2018, ' + Cat_Studies[Cat_Studies['DATE'].str.contains(
+          '2018')]['JOURNAL'].mode()[0] +
+          ' published the largest number of GWAS papers')
     print('Largest Accession to date: ' +
           str(Cat_Ancestry_groupedbyN.sort_values(by='N',
                                                   ascending=False)['N'].iloc[0]) +
@@ -61,26 +67,38 @@ def simple_facts(Cat_Studies, Cat_Ancestry,
     print('The study with the largest number of authors has: ' +
           str(AuthorMaster.groupby(['PUBMEDID'])['AUTHORNAME'].count().max()) +
           ' authors.')
+    print('The current publication lag in the Catalog is: ' +
+          str((datetime.now()
+               - pd.to_datetime(Cat_Studies['DATE'].max())).days)
+          + ' days')
+    print('The lag between the date it was most recently published and date ' +
+          ' of last included GWAS: ' +
+          str((pd.to_datetime(mostrecentgwascatdate)
+               - pd.to_datetime(Cat_Studies['DATE'].max())).days)
+          + ' days')
 
 
 def ancestry_parser(output_path, input_series, Cat_Studies):
-    fileout = open(output_path, 'w', encoding='utf-8')
-    fileout.write('STUDY ACCESSION,Cleaned Ancestry,Cleaned Ancestry Size\n')
-    for index, row in Cat_Studies.iterrows():
-        checksum = 0
-        for ancestry in row[input_series].split(';'):
-            number = re.findall(r'\d+', ancestry.strip())
-            if (len(number) == 1):
-                checksum += 1
-        if checksum == len(row[input_series].split(';')):
+    ''' Parse single individual ancestries from the free text
+        based on capitalisations '''
+    with open(output_path, 'w', encoding='utf-8') as csv_file:
+        fileout = csv.writer(csv_file, delimiter=',', lineterminator='\n')
+        fileout.writerow(['STUDY ACCESSION', 'Cleaned Ancestry',
+                          'Cleaned Ancestry Size'])
+        for index, row in Cat_Studies.iterrows():
+            checksum = 0
             for ancestry in row[input_series].split(';'):
                 number = re.findall(r'\d+', ancestry.strip())
-                words = ''.join(i for i in ancestry.strip() if not i.isdigit())
-                if (len(number) == 1) and (len(words.strip()) > 3) and \
-                   (sum(1 for c in words if c.isupper()) > 0):
-                    fileout.write(row['STUDY ACCESSION'] + ',' +
-                                  words.strip() + ',' + str(number[0]) + '\n')
-    fileout.close()
+                if (len(number) == 1):
+                    checksum += 1
+            if checksum == len(row[input_series].split(';')):
+                for ancestry in row[input_series].split(';'):
+                    number = re.findall(r'\d+', ancestry.strip())
+                    words = ''.join(i for i in ancestry.strip() if not i.isdigit())
+                    if (len(number) == 1) and (len(words.strip()) > 3) and \
+                       (sum(1 for c in words if c.isupper()) > 0):
+                        fileout.writerow([row['STUDY ACCESSION'],
+                                          words.strip(), str(number[0])])
 
 
 def make_meanfemale_andranks(AuthorMaster, EFO):

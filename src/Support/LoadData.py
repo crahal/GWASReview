@@ -4,6 +4,7 @@ import requests
 import requests_ftp
 import os
 import re
+import csv
 from unidecode import unidecode
 
 
@@ -12,20 +13,22 @@ def EFO_parent_mapper(Cat_Stud, Cat_Anc_byN):
     catalogue datasets. It also does a bit of cleaning of terms to make strings
     which appear long on graphs in the notebook a bit cleaner
     """
-    fileout = open(os.path.abspath(
-                   os.path.join('__file__',
-                                '../..',
-                                'data',
-                                'Catalogue',
-                                'Synthetic',
-                                'Mapped_EFO.csv')), 'w')
-    fileout.write('EFO URI,STUDY ACCESSION,PUBMEDID,ASSOCIATION COUNT\n')
-    for index, row in Cat_Stud.iterrows():
-        listoftraits = row['MAPPED_TRAIT_URI'].split(',')
-        for trait in listoftraits:
-            fileout.write(trait.lower().strip() + ',' + row['STUDY ACCESSION']
-                          + ',' + str(row['PUBMEDID']) + ','
-                          + str(row['ASSOCIATION COUNT']) + '\n')
+    with open(os.path.abspath(os.path.join('__file__',
+                                           '../..',
+                                           'data',
+                                           'Catalogue',
+                                           'Synthetic',
+                                           'Mapped_EFO.csv')), 'w') as fileout:
+        efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
+        efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
+                          'PUBMEDID', 'ASSOCIATION COUNT'])
+        for index, row in Cat_Stud.iterrows():
+            listoftraits = row['MAPPED_TRAIT_URI'].split(',')
+            for trait in listoftraits:
+                efo_out.writerow([trait.lower().strip(),
+                                  row['STUDY ACCESSION'],
+                                  str(row['PUBMEDID']),
+                                  str(row['ASSOCIATION COUNT'])])
     EFOsPerPaper = pd.read_csv(os.path.abspath(
                                os.path.join('__file__',
                                             '../..',
@@ -67,19 +70,22 @@ def EFO_parent_mapper(Cat_Stud, Cat_Anc_byN):
     Mapped['Parent term'] = Mapped['Parent term'].str.replace(' or ', '/')
     Mapped['Parent term'] = Mapped['Parent term'].str.title()
 
-    fileout = open(os.path.abspath(
-                   os.path.join('__file__',
-                                '../..',
-                                'data',
-                                'Catalogue',
-                                'Synthetic',
-                                'Map_NoComs.csv')), 'w')
-    fileout.write('EFO URI,STUDY ACCESSION,PUBMEDID,ASSOCIATION COUNT\n')
-    for index, row in Cat_Stud.iterrows():
-        if ',' not in row['MAPPED_TRAIT_URI']:
-            fileout.write(row['MAPPED_TRAIT_URI'].lower().strip() + ',' +
-                          row['STUDY ACCESSION'] + ',' + str(row['PUBMEDID']) +
-                          ',' + str(row['ASSOCIATION COUNT']) + '\n')
+    with open(os.path.abspath(
+              os.path.join('__file__',
+                           '../..',
+                           'data',
+                           'Catalogue',
+                           'Synthetic',
+                           'Map_NoComs.csv')), 'w') as fileout:
+        efo_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
+        efo_out.writerow(['EFO URI', 'STUDY ACCESSION',
+                          'PUBMEDID', 'ASSOCIATION COUNT'])
+        for index, row in Cat_Stud.iterrows():
+            if ',' not in row['MAPPED_TRAIT_URI']:
+                efo_out.writerow([row['MAPPED_TRAIT_URI'].lower().strip(),
+                                  row['STUDY ACCESSION'],
+                                  str(row['PUBMEDID']),
+                                  str(row['ASSOCIATION COUNT'])])
     EFOsPer_NoComs = pd.read_csv(os.path.abspath(
                                  os.path.join('__file__', '../..', 'data',
                                               'Catalogue', 'Synthetic',
@@ -133,6 +139,7 @@ def load_gwas_cat():
                           index_col=False)
     Cat_Anc.rename(columns={'BROAD ANCESTRAL CATEGORY': 'BROAD ANCESTRAL',
                             'NUMBER OF INDIVDUALS': 'N'}, inplace=True)
+    Cat_Anc = Cat_Anc[~Cat_Anc['BROAD ANCESTRAL'].isnull()]
     Cat_Anc.columns = Cat_Anc.columns.str.replace('ACCCESSION', 'ACCESSION')
     Cat_Anc_byN = Cat_Anc[['STUDY ACCESSION', 'N',
                            'DATE']].groupby(by='STUDY ACCESSION').sum()
@@ -153,6 +160,7 @@ def load_gwas_cat():
     Cat_Anc = Cat_Anc[Cat_Anc['N'].notnull()]
     Cat_Anc['N'] = Cat_Anc['N'].astype(int)
     Cat_Anc = Cat_Anc.sort_values(by='Dates')
+    Cat_Anc['Broader']
     Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
         'African American or Afro-Caribbean', 'African Am./Caribbean')
     Cat_Anc['Broader'] = Cat_Anc['Broader'].str.replace(
@@ -223,7 +231,7 @@ def load_pubmed_data():
 def make_timely(variables, yearlist, yearquarterlist, Cat_Stud,
                 Cat_Anc, Cat_Anc_byN):
     """ build the dataframe which plots the longitudinal growth of GWAS over
-    time
+    time (figure 1a)
     """
     df_years = pd.DataFrame(columns=variables, index=yearlist)
     df_yearquarters = pd.DataFrame(
@@ -396,21 +404,22 @@ def make_timely(variables, yearlist, yearquarterlist, Cat_Stud,
 def make_clean_CoR(Cat_Anc):
     """ clean the country of recruitment field for the geospatial analysis
     """
-    fileout = open(os.path.abspath(
-                   os.path.join('__file__',
-                                '../..',
-                                'data',
-                                'Catalogue',
-                                'Synthetic',
-                                'ancestry_CoR.csv')), 'w')
-    fileout.write('Date,PUBMEDID,N,Cleaned Country\n')
-    for index, row in Cat_Anc.iterrows():
-        if len(row['COUNTRY OF RECRUITMENT'].split(',')) == 1:  # or contains ?
-            fileout.write(row['DATE'] + ',' +
-                          str(row['PUBMEDID']) + ',' +
-                          str(row['N']) + ',' +
-                          row['COUNTRY OF RECRUITMENT'] + '\n')
-    fileout.close()
+    with open(os.path.abspath(
+              os.path.join('__file__',
+                           '../..',
+                           'data',
+                           'Catalogue',
+                           'Synthetic',
+                           'ancestry_CoR.csv')), 'w') as fileout:
+        rec_out = csv.writer(fileout, delimiter=',', lineterminator='\n')
+        rec_out .writerow(['Date', 'PUBMEDID', 'N', 'Cleaned Country'])
+        for index, row in Cat_Anc.iterrows():
+            if len(row['COUNTRY OF RECRUITMENT'].split(',')) == 1:
+                rec_out .writerow([row['DATE'],
+                                   str(row['PUBMEDID']),
+                                   str(row['N']),
+                                   row['COUNTRY OF RECRUITMENT']])
+
     Clean_CoR = pd.read_csv(os.path.abspath(
         os.path.join('__file__',
                      '../..',
@@ -468,13 +477,13 @@ def make_clean_CoR(Cat_Anc):
 def download_cat(path, ebi_download):
     """ download the data from the ebi main site and ftp"""
     r = requests.get(ebi_download + 'studies_alternative')
-    with open(path+'/Cat_Stud.tsv', 'wb') as tsvfile:
+    with open(os.path.join(path, 'Cat_Stud.tsv'), 'wb') as tsvfile:
         tsvfile.write(r.content)
     r = requests.get(ebi_download + 'ancestry')
-    with open(path + '/Cat_Anc.tsv', 'wb') as tsvfile:
+    with open(os.path.join(path, 'Cat_Anc.tsv'), 'wb') as tsvfile:
         tsvfile.write(r.content)
     r = requests.get(ebi_download + 'full')
-    with open(path + '/Cat_Full.tsv', 'wb') as tsvfile:
+    with open(os.path.join(path, 'Cat_Full.tsv'), 'wb') as tsvfile:
         tsvfile.write(r.content)
     requests_ftp.monkeypatch_session()
     s = requests.Session()
@@ -482,5 +491,5 @@ def download_cat(path, ebi_download):
     subdom = '/pub/databases/gwas/releases/latest/'
     file = 'gwas-efo-trait-mappings.tsv'
     r = s.get(ftpsite+subdom+file)
-    with open(path + '/Cat_Map.tsv', 'wb') as tsvfile:
+    with open(os.path.join(path, 'Cat_Map.tsv'), 'wb') as tsvfile:
         tsvfile.write(r.content)

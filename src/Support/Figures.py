@@ -11,7 +11,7 @@ from matplotlib.collections import PatchCollection
 import matplotlib.dates as mdates
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import matplotlib as mpl
-from Support.Additional import grey_color_func
+from Support.Additional import get_grey_colour
 from Support.LoadData import make_timely
 from mpl_toolkits.basemap import Basemap
 from matplotlib.colors import Normalize
@@ -21,7 +21,7 @@ mpl.rcParams.update(mpl.rcParamsDefault)
 
 
 def wordcloud_figure(abstract_count, output_file):
-    """ Make the double helix word cloud """
+    """ Make the double helix word cloud: just a bit of fun."""
     words_array = []
     with open(abstract_count, 'r', errors='replace') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -39,7 +39,7 @@ def wordcloud_figure(abstract_count, output_file):
     wc = WordCloud(background_color='white', max_words=1250, mask=mask,
                    max_font_size=5000)
     wc.generate_from_frequencies(dict(words_array))
-    wc.recolor(color_func=grey_color_func)
+    wc.recolor(color_func=get_grey_colour)
     wc.to_file(output_file)
     plt.figure(figsize=(16, 8))
     plt.imshow(wc, interpolation='bilinear')
@@ -49,7 +49,7 @@ def wordcloud_figure(abstract_count, output_file):
 
 def gwas_growth(output_file, Cat_Studies, Cat_Ancestry,
                 Cat_Ancestry_groupedbyN):
-    """ Plot the growth of GWAS over time """
+    """ Plot the growth of GWAS over time (Figure 1)"""
     plt.style.use('seaborn-ticks')
     plt.rcParams['font.family'] = 'Helvetica'
     plt.rcParams['axes.linewidth'] = 0.75
@@ -136,7 +136,8 @@ def gwas_growth(output_file, Cat_Studies, Cat_Ancestry,
 
 def choropleth_map(df, input_series, cmap, output_path):
     """ fairly generic function to make a choropleth map
-    feed in either 'N' or 'ParticipationPerPerson' """
+    feed in either 'N' or 'ParticipationPerPerson': Population adjusted is
+    just for robustness"""
 
     cm = plt.get_cmap(cmap)
     df['scheme'] = [
@@ -184,6 +185,7 @@ def choropleth_map(df, input_series, cmap, output_path):
 
 
 def plot_heatmap(funder_ancestry, funder_parent, output_path):
+    ''' Build the funder heatmaps '''
     sns.set(font_scale=1, font='Arial', style='white')
     f, (ax1, ax2) = plt.subplots(nrows=1,
                                  ncols=2,
@@ -228,7 +230,7 @@ def plot_heatmap(funder_ancestry, funder_parent, output_path):
 
 def plot_bubbles(output_path, Cat_Ancestry,
                  Broad_Ancestral_NoNR, countriesdict):
-    """ Make bubble plot """
+    """ This makes the Broader Ancestry bubble plot (Figure 2) """
     fig = plt.figure(figsize=(12, 6), dpi=800)
     ax = fig.add_subplot(1, 1, 1)
     for obs in Cat_Ancestry.index:
@@ -242,7 +244,7 @@ def plot_bubbles(output_path, Cat_Ancestry,
                              alpha=0.6,
                              markersize=Cat_Ancestry['N'][obs] / 6500)
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=24))
-    ax.set_xlim(pd.Timestamp('2007-01-01'), pd.Timestamp('2017-12-31'))
+    ax.set_xlim(pd.Timestamp('2007-01-01'), pd.Timestamp('2018-12-31'))
     ax.set_ylim(0, Cat_Ancestry['N'].max()+50000)
     ax.yaxis.tick_right()
     ax.set_ylabel('Individual Sample Sizes')
@@ -278,7 +280,8 @@ def plot_bubbles(output_path, Cat_Ancestry,
 
 
 def boxswarm_plot(dataframe, ranks, output_path):
-    """ plot the box swarm plots """
+    """ plot the box swarm plots: these are relegated mostly to the notebook
+    and dont feature in the paper at present """
     fig = plt.figure(figsize=(14, 7), dpi=800)
     ax1 = fig.add_subplot(1, 1, 1)
     p = sns.boxplot(data=dataframe,

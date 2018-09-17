@@ -13,7 +13,7 @@ def traits_robustness(EFO_NoCom):
     have multiple traits in
     """
     plt.style.use('seaborn-ticks')
-    plt.rcParams["font.family"] = "Times New Roman"
+    plt.rcParams["font.family"] = "Helvetica"
     Trait_Count = EFO_NoCom.groupby('EFO term')['EFO term'].count()
     Trait_Count = Trait_Count.to_frame()
     Trait_Count = Trait_Count.rename(columns={'EFO term': '# Studies'})
@@ -231,6 +231,5 @@ def funder_robustness(EFO_NoCom, FunderInfo, Cat_Ancestry):
                      linewidth=2, robust=True, cbar=False,
                      annot_kws={"size": 8})
     hh.tick_params(axis='both', which='major', labelsize=9)
-
     plt.gcf()
     plt.setp(ax2.get_yticklabels(), visible=False)

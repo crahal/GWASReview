@@ -1,6 +1,6 @@
 
 
-def grey_color_func(
+def get_grey_colour(
         word, font_size, position,
         orientation, random_state=None,
         **kwargs):
