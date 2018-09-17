@@ -9,19 +9,15 @@
 
 ### Introduction
 
-This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 07/07/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries for regex based exercise will be maintained as new catalog releases introduce new terms needing normalization.
+This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 29/08/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries (three of them) for regular expression based exercises will be maintained as new catalog releases introduce new terms needing normalization.
 
 
 ### Prerequisites
 
-As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/architectureofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). If you don't want to ```pip install -r requirements.txt```, you will at least need ```conda install basemap -c conda-forge``` (and maybe the accompanying data package), ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp```, ```pip install unidecode``` and ```pip install wordcloud```.
-
-
-Comment out cell [14] for any issues with basemap compatibility. For those unfamiliar with jupyuter notebooks,  just ```cd``` to the cloned directory, and then run the ```jupyter notebook``` command in the terminal to launch the notebook.
-
+As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/architectureofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). If you don't want to ```pip install -r requirements.txt```, you will at least need ```conda install basemap -c conda-forge``` (and maybe the accompanying data package), ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp```, ```pip install unidecode``` and ```pip install wordcloud```. Comment out cell the choropleth map subsection for any issues with basemap compatibility.
 ### Running the Code
 
-This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with juputer notebooks,  just ```cd``` to the the Code subdirectory in the architectureofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A complete .html is also contained in this repo and a compiled .tex version of a recent presentation accompanies the manuscript.
+This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with jupyter notebooks, just ```cd``` to the the Code subdirectory in the architectureofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A recent presentation accompanies the manuscript.
 
 ### Repository Structure
 
@@ -96,4 +92,4 @@ This is a prototype version prior to full release and publication of the associa
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license. It comes without any warranty, to the extent permitted by applicable law.
 
 ### Acknowledgments
-Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė.
+Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė. Please see the full version of the paper for a full list of acknowledgements.
