@@ -92,4 +92,4 @@ This is a prototype version prior to full release and publication of the associa
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license. It comes without any warranty, to the extent permitted by applicable law.
 
 ### Acknowledgments
-Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė. Please see the full version of the paper for a full list of acknowledgements.
+Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė. Please see the accompanying paper for a full list of acknowledgements.
