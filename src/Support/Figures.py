@@ -241,7 +241,7 @@ def plot_bubbles(output_path, Cat_Ancestry,
                              color=value,
                              marker='.',
                              label='the data',
-                             alpha=0.6,
+                             alpha=0.4,
                              markersize=Cat_Ancestry['N'][obs] / 6500)
     ax.xaxis.set_major_locator(mdates.MonthLocator(interval=24))
     ax.set_xlim(pd.Timestamp('2007-01-01'), pd.Timestamp('2018-12-31'))
