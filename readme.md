@@ -12,7 +12,7 @@ This is a repository to accompany a scientometric review of all GWAS by M.C. Mil
 
 ### Prerequisites
 
-As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/architectureofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). If you don't want to ```pip install -r requirements.txt```, you will at least need ```conda install basemap -c conda-forge``` (and maybe the accompanying data package), ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp```, ```pip install unidecode``` and ```pip install wordcloud```. Comment out cell the choropleth map subsection for any issues with basemap compatibility.
+As a pre-requisite to running the iPython notebook, you will need a working Python 3 installation with all of the necessary dependencies detailed in [requirements.txt](https://github.com/crahal/architectureofGWAS/blob/master/requirements.txt). We strongly recommend virtual environments and [Anaconda](https://www.anaconda.com/distribution/). Specific requirements: you will at least need ```conda install basemap -c conda-forge``` (and maybe the accompanying data package), ```pip install gender_guesser```, ```pip install biopython```, ```pip install requests_ftp```, ```pip install unidecode``` and ```pip install wordcloud```. Comment out cell the choropleth map subsection for any issues with basemap compatibility.
 
 ### Running the Code
 
