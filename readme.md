@@ -8,7 +8,7 @@
 
 ### Introduction
 
-This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 29/08/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries (three of them) for regular expression based exercises will be maintained as new catalog releases introduce new terms needing normalization.
+This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 29/08/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries (three of them) for regular expression based exercises will be maintained as new Catalog releases introduce new terms needing normalization. Please raise all issues related to the code here.
 
 ### Prerequisites
 
@@ -82,10 +82,10 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │   ├── Broad_Ancestral_NoNR.csv  
 │   ├── Broad_Ancestral_Time_NoNR_PC.csv  
 │   ├── ContinentOfRecruitment.csv  
-│   └── CountryOfRecruitment.csv  
+│   └── CountryOfRecruitment.csv  7
 
 ### Versioning
-This is a prototype version prior to full release and publication of the associated paper.
+This is a prototype version prior to full release and publication of the associated paper. Note: some of the manually parsed observations on utilised datasets may require further cleaning and correcting. Please raise an issue in this repo to do so: we would be delighted to accept all crowd-sourced assistance!
 
 ### License
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license. It comes without any warranty, to the extent permitted by applicable law.
@@ -93,8 +93,8 @@ This work is free. You can redistribute it and/or modify it under the terms of t
 ### Acknowledgments
 Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė. Please see the accompanying paper for a full list of acknowledgements.
 
-
 ### To Do (Long Run)
 
 1. Custom function to create funder-specific plots for each funder
 2. Complete manual parsing task for 100% of all studies.
+3. Move dictionaries from support functions to text delimited files
