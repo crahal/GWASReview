@@ -75,7 +75,7 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │       └── Sup_Figure_1_NoCommas.svg  
 ├── piprequirements.txt  
 ├── readme.md  
-├── GWAS_Review.html
+├── GWAS_Review.html  
 ├── Tables  
 │   ├── Authors.csv  
 │   ├── Broad_Ancestral_Full.csv  
