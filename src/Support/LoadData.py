@@ -447,22 +447,15 @@ def make_clean_CoR(Cat_Anc):
         'United Republic of Tanzania', 'Tanzania')
     Clean_CoR['Cleaned Country'] = Clean_CoR['Cleaned Country'].str.replace(
         'Republic of Ireland', 'Ireland')
-
     Clean_CoR['Cleaned Country'] = Clean_CoR['Cleaned Country'].str.replace(
         'Micronesia \(Federated States of\)',
         'Micronesia, Federated States of')
-    print('Cleaning for single country of recruitment: ' +
-          str(round((len(Clean_CoR) / len(Cat_Anc)) * 100, 3)) +
-          '%  obs remain. \nThis represents about ' +
-          str(round((Clean_CoR['N'].sum() / Cat_Anc['N'].sum()) * 100, 3)) +
-          '% of the total GWAS N. \nWhen we drop for country==NR,' +
-          ' we lose another: ' +
-          str(round(len(Clean_CoR[Clean_CoR['Cleaned Country'] == 'NR']) /
-                       (len(Clean_CoR)) * 100, 2)) + '% papers.')
     Clean_CoR = Clean_CoR[Clean_CoR['Cleaned Country'] != 'NR']
-    print(str(len(Clean_CoR)) +
-          ' obs for this field remain out of a total of ' +
-          str(len(Cat_Anc)) + ' rows of Cat_Anc data')
+    print('Cleaning for single country of recruitment:\n' +
+          str(round((len(Clean_CoR) / len(Cat_Anc)) * 100, 2)) +
+          '% of the rows remain.')
+    print(str(round((Clean_CoR['N'].sum() / Cat_Anc['N'].sum()) * 100, 2)) +
+          '% of the N remains.')
     Clean_CoR.to_csv(os.path.abspath(
                      os.path.join('__file__',
                                   '../..',

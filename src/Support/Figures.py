@@ -177,7 +177,7 @@ def choropleth_map(df, input_series, cmap, output_path):
     clb.ax.tick_params(labelsize=10)
     if input_series == 'N':
         clb.ax.set_title('Number of\n People (m)', y=1.02, fontsize=11)
-    elif input_series == 'ParticipationPerPerson':
+    elif input_series == 'Per Rec':
         clb.ax.set_title('Participations\nPer Recruitment',
                          y=1.02, fontsize=11)
     plt.savefig(output_path, bbox_inches='tight')

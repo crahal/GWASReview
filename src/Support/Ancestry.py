@@ -131,7 +131,7 @@ def list_remover(text):
                   'LDL', ' Mild', 'Cognitive', 'Impairment', 'Sarcoidosis',
                   'Yu Zhi', 'Lymphoma', 'Impairment', 'Type', 'Kuru',
                   'Frontemporal', 'Erasmus', 'Barrett', 'Lofgren', 'Hashimoto',
-                  'Family', 'Multiple']
+                  'Family', 'Multiple', 'Richardson', 'Metropolitan']
     for word in removelist:
         text = text.replace(word, '')
     return text
