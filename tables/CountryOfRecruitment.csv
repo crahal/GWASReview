@@ -1,52 +1,52 @@
 ,Continent,Count,N,Count (%),N (%),Per Rec
-United Kingdom,Europe,653,21294574,10.69,40.0,0.32
-United States,North America,2548,10549181,41.72,19.82,0.03
-Japan,Asia,460,7456048,7.53,14.01,0.06
-Iceland,Europe,71,6409109,1.16,12.04,19.13
-China,Asia,478,2034701,7.83,3.82,0.0
-Finland,Europe,208,1176077,3.41,2.21,0.21
-"Korea, South",Asia,252,840876,4.13,1.58,0.02
-Netherlands,Europe,175,663477,2.87,1.25,0.04
-Germany,Europe,170,417234,2.78,0.78,0.01
-Australia,Oceania,108,319142,1.77,0.6,0.01
-Sweden,Europe,88,296895,1.44,0.56,0.03
-Italy,Europe,82,261452,1.34,0.49,0.0
-Singapore,Asia,96,210780,1.57,0.4,0.04
-Denmark,Europe,38,166471,0.62,0.31,0.03
-France,Europe,79,133773,1.29,0.25,0.0
-Norway,Europe,34,123336,0.56,0.23,0.02
-Pakistan,Asia,17,104634,0.28,0.2,0.0
-Greece,Europe,34,103821,0.56,0.2,0.01
-Canada,North America,58,58076,0.95,0.11,0.0
-India,Asia,37,57231,0.61,0.11,0.0
-Philippines,Asia,38,55902,0.62,0.11,0.0
+United Kingdom,Europe,646,21952515,10.42,40.59,0.33
+United States,North America,2547,10620180,41.1,19.64,0.03
+Japan,Asia,464,7458538,7.49,13.79,0.06
+Iceland,Europe,71,6409109,1.15,11.85,19.13
+China,Asia,499,2059415,8.05,3.81,0.0
+Finland,Europe,218,1193333,3.52,2.21,0.22
+"Korea, South",Asia,254,850489,4.1,1.57,0.02
+Netherlands,Europe,175,663477,2.82,1.23,0.04
+Germany,Europe,173,424942,2.79,0.79,0.01
+Australia,Oceania,110,320458,1.78,0.59,0.01
+Sweden,Europe,89,297226,1.44,0.55,0.03
+Italy,Europe,82,261452,1.32,0.48,0.0
+Singapore,Asia,102,224562,1.65,0.42,0.04
+Denmark,Europe,38,166471,0.61,0.31,0.03
+France,Europe,114,162133,1.84,0.3,0.0
+Norway,Europe,34,123336,0.55,0.23,0.02
+Pakistan,Asia,17,104634,0.27,0.19,0.0
+Greece,Europe,34,103821,0.55,0.19,0.01
+Philippines,Asia,42,62962,0.68,0.12,0.0
+Canada,North America,59,58227,0.95,0.11,0.0
+India,Asia,37,57231,0.6,0.11,0.0
+Taiwan,Asia,23,50132,0.37,0.09,0.0
 Bangladesh,Asia,18,49568,0.29,0.09,0.0
-Taiwan,Asia,19,48661,0.31,0.09,0.0
 Mexico,North America,21,46052,0.34,0.09,0.0
-Spain,Europe,51,43525,0.83,0.08,0.0
-Russia,Europe,12,31773,0.2,0.06,0.0
-Switzerland,Europe,21,29573,0.34,0.06,0.0
-Brazil,South America,25,22109,0.41,0.04,0.0
+Spain,Europe,51,43525,0.82,0.08,0.0
+Russia,Europe,12,31773,0.19,0.06,0.0
+Switzerland,Europe,21,29573,0.34,0.05,0.0
+Brazil,South America,25,22109,0.4,0.04,0.0
 Israel,Asia,11,18995,0.18,0.04,0.0
 Thailand,Asia,22,16966,0.36,0.03,0.0
 Saudi Arabia,Asia,8,15872,0.13,0.03,0.0
-Kenya,Africa,5,13395,0.08,0.03,0.0
-Poland,Europe,12,12108,0.2,0.02,0.0
-Vietnam,Asia,4,11959,0.07,0.02,0.0
+Kenya,Africa,5,13395,0.08,0.02,0.0
+Nigeria,Africa,11,12498,0.18,0.02,0.0
+Poland,Europe,12,12108,0.19,0.02,0.0
+Vietnam,Asia,4,11959,0.06,0.02,0.0
 Uganda,Africa,6,8583,0.1,0.02,0.0
-Nigeria,Africa,7,8430,0.11,0.02,0.0
 "Gambia, The",Africa,3,8201,0.05,0.02,0.0
 Lebanon,Asia,3,7782,0.05,0.01,0.0
 Barbados,North America,3,7370,0.05,0.01,0.03
 Indonesia,Asia,7,7250,0.11,0.01,0.0
-Ghana,Africa,4,7193,0.07,0.01,0.0
+Ghana,Africa,4,7193,0.06,0.01,0.0
 "Micronesia, Federated States of",Oceania,3,6514,0.05,0.01,0.06
 Belgium,Europe,5,6382,0.08,0.01,0.0
 Austria,Europe,3,5793,0.05,0.01,0.0
 Costa Rica,North America,5,5352,0.08,0.01,0.0
 Croatia,Europe,5,5335,0.08,0.01,0.0
 Bulgaria,Europe,5,4332,0.08,0.01,0.0
-Turkey,Asia,4,3862,0.07,0.01,0.0
+Turkey,Asia,4,3862,0.06,0.01,0.0
 Iran,Asia,6,3562,0.1,0.01,0.0
 South Africa,Africa,9,3245,0.15,0.01,0.0
 Samoa,Oceania,1,3072,0.02,0.01,0.02
@@ -58,16 +58,16 @@ Ethiopia,Africa,8,2331,0.13,0.0,0.0
 Portugal,Europe,6,1890,0.1,0.0,0.0
 New Zealand,Oceania,2,1665,0.03,0.0,0.0
 Malawi,Africa,2,1605,0.03,0.0,0.0
-Nepal,Asia,4,1577,0.07,0.0,0.0
+Nepal,Asia,4,1577,0.06,0.0,0.0
 Morocco,Africa,2,1525,0.03,0.0,0.0
 Seychelles,Seven seas (open ocean),1,1389,0.02,0.0,0.01
-Malaysia,Asia,4,1383,0.07,0.0,0.0
+Malaysia,Asia,4,1383,0.06,0.0,0.0
 Mongolia,Asia,2,1298,0.03,0.0,0.0
 Sri Lanka,Asia,2,1154,0.03,0.0,0.0
 Belarus,Europe,1,1021,0.02,0.0,0.0
 Trinidad and Tobago,North America,1,908,0.02,0.0,0.0
 Cyprus,Asia,1,875,0.02,0.0,0.0
-Puerto Rico,North America,4,864,0.07,0.0,0.0
+Puerto Rico,North America,4,864,0.06,0.0,0.0
 Ireland,Europe,2,695,0.03,0.0,0.0
 Yemen,Asia,1,589,0.02,0.0,0.0
 Czechia,Europe,1,566,0.02,0.0,0.0
