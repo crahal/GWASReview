@@ -8,7 +8,7 @@
 
 ### Introduction
 
-This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C.Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 29/08/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries (three of them) for regular expression based exercises will be maintained as new Catalog releases introduce new terms needing normalization. Please raise all issues related to the code here.
+This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C. Rahal. For a copy of the working paper, please contact [Melinda Mills](https://www.sociology.ox.ac.uk/academic-staff/melinda-mills.html). A link to an open-access version will appear here in due course. Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 27/10/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries for regular expression based exercises will be maintained as new Catalog releases introduce new terms needing normalization. Please raise all issues related to the code here in this repo.
 
 ### Prerequisites
 
@@ -16,7 +16,7 @@ As a pre-requisite to running the iPython notebook, you will need a working Pyth
 
 ### Running the Code
 
-This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and Mac all the same. For those unfamiliar with jupyter notebooks, just ```cd``` to the the Code subdirectory in the architectureofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A recent presentation accompanies the manuscript.
+This code is operating system independent (through the ``os`` module) and should work on Windows, Linux and OS X all the same. For those unfamiliar with jupyter notebooks, just ```cd``` to the the Code subdirectory in the architectureofGWAS clone, and then run the ```jupyter notebook``` command in the terminal to launch the notebook. A recent [presentation](https://github.com/crahal/GWASReview/tree/master/presentation) accompanies the repository.
 
 ### Repository Structure
 
@@ -85,13 +85,13 @@ Repo structure made using the ```tree``` [utility](https://en.wikipedia.org/wiki
 │   └── CountryOfRecruitment.csv
 
 ### Versioning
-This is a prototype version prior to full release and publication of the associated paper. Note: some of the manually parsed observations on utilised datasets may require further cleaning and correcting. Please raise an issue in this repo to do so: we would be delighted to accept all crowd-sourced assistance!
+This is the version which powers the conditionally accepted article. Note: some of the manually parsed observations on utilised datasets may require further cleaning and correcting in future versions of the Catalog. Please raise an issue in this repo to alert us of any necesarry changes.
 
 ### License
 This work is free. You can redistribute it and/or modify it under the terms of the MIT license. It comes without any warranty, to the extent permitted by applicable law.
 
 ### Acknowledgments
-Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė. Please see the accompanying paper for a full list of acknowledgements.
+Research assistance for the manual data curation was provided by Pilar Wiegand, Xuejie Ding and Domantė Grendaitė. Please see the accompanying paper for a full list of acknowledgements. A code review was undertaken by [IanKnowles](https://github.com/ianknowles)
 
 ### To Do (Long Run)
 
