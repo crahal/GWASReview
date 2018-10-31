@@ -193,6 +193,102 @@ def load_pubmed_data():
                                           'data',
                                           'PUBMED',
                                           'Pubmed_FunderInfo.csv')))
+    FunderInfo = FunderInfo[FunderInfo['Agency'].notnull()]
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Natural Science Foundation of China \(National Science Foundation of China\)',
+                                       'National Natural Science Foundation of China')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('Medical Research Council', 'MRC')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Research Foundation of Korea \(KR\)',
+                                       'National Research Foundation of Korea')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Human Genome Research Institute',
+                                       'NHGRI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NHGRI NIH HHS',
+                                       'NHGRI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NCI NIH HHS',
+                                       'NCI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Cancer Institute',
+                                       'NCI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Arthritis and Musculoskeletal and Skin Diseases',
+                                       'NIAMS NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute on Aging',
+                                       'NIA NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NIDA NIH HHS',
+                                       'NIDA')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Diabetes and Digestive and Kidney Diseases',
+                                       'NIDDK NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institutes of Health',
+                                       'NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NIMH NIH HHS',
+                                       'NIMH')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Neurological Disorders and Stroke',
+                                       'NINDS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NINDS NIH HHS',
+                                       'NINDS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Natural Science Foundation of China (National Science Foundation of China)',
+                                       'National Natural Science Foundation of China')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Research Foundation of Korea (KR)',
+                                       'National Research Foundation of Korea')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Human Genome Research Institute',
+                                       'NHGRI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NHGRI NIH HHS',
+                                       'NHGRI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Heart, Lung, and Blood Institute',
+                                       'NHLBI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NHLBI NIH HHS',
+                                       'NHLBI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Cancer Institute',
+                                       'NCI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NCI NIH HHS',
+                                       'NCI')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Arthritis and Musculoskeletal and Skin Diseases',
+                                       'NIAMS NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute on Aging',
+                                       'NIA NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Arthritis and Musculoskeletal and Skin Diseases',
+                                       'NIAMS NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NIDA NIH HHS',
+                                       'NIDA')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Diabetes and Digestive and Kidney Diseases',
+                                       'NIDDK NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institutes of Health',
+                                       'NIH HHS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NIMH NIH HHS',
+                                       'NIMH')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('National Institute of Neurological Disorders and Stroke',
+                                       'NINDS')
+    FunderInfo['Agency'] = FunderInfo['Agency'].\
+                           str.replace('NINDS NIH HHS',
+                                       'NINDS')
     AbstractInfo = pd.read_csv(os.path.abspath(
                                os.path.join('__file__',
                                             '../..',
@@ -223,8 +319,6 @@ def load_pubmed_data():
         subset=['PUBMEDID', 'AUTHORNAME'])
     for col in ['FORENAME', 'LASTNAME', 'AUTHORNAME']:
         AuthorMaster[col] = AuthorMaster[col].apply(unidecode)
-    FunderInfo['Agency'] = FunderInfo['Agency'].str.replace(
-        'Medical Research Council', 'MRC')
     return FunderInfo, AbstractInfo, AuthorMaster
 
 
