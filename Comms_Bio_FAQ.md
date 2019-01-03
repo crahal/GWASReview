@@ -2,7 +2,7 @@
 
 <h2 style="text-align: center;" markdown="1"> A Scientometric Review of Genome-Wide Association Studies</h2>
 
-<h4 style="text-align: center;" markdown="1"> Journal: [Communications Biology](https://www.nature.com/commsbio/) </h4>
+<h4 style="text-align: center;" markdown="1"> Journal: Communications Biology</h4>
 
 <h4 style="text-align: center;" markdown="1"> DOI: 10.1038/s42003-018-0261-x</h4>
 
@@ -13,6 +13,7 @@
  <h6 style="text-align: center;" markdown="1"> Correspondence: Professor Melinda Mills, Nuffield College, 1 New Road, Oxford, OX1 1NF, UK.<br/> E-mail: melinda.mills@nuffield.ox.ac.uk</h6>
 
 <h6 style="text-align: left;" markdown="1"> This FAQ provides a range of accessible answers to some of the questions you might have regarding our article.</h6>&nbsp; <!--- adds a bit of blank space for dramatic effect -->
+
 1.	**What do we study?**
 
     * **1.1 What was the central aim of this study?** The aim of this study was to conduct the first systematic review of the undertaking of Genome-Wide Association Studies (GWAS, for definition see FAQ 1.5) which identify the genetic loci that distinguish us from one another. We consider the scientometrics (see FAQ 1.3) of GWAS, including who the researchers are, who funds them and who (and what) they study. Since the human genome was sequenced, thousands of papers and accessions have identified multiple genetic loci related to diseases such as type 2 diabetes and Alzheimer’s, psychiatric disorders like schizophrenia or autism, physical traits such as height and BMI and behavioural and psychological characteristics such as neuroticism.
