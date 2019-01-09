@@ -8,7 +8,7 @@
 
 ### Introduction
 
-This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C. Rahal. The article which corresponds to this repository is now published Open Access in [Communications Biology!](https://www.nature.com/commsbio/). A 'shortlink' to the paper can be found here:
+This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C. Rahal. The article which corresponds to this repository is now published Open Access in [Communications Biology!](https://www.nature.com/commsbio/) A 'shortlink' to the paper can be found here:
 <p align="center">
 https://rdcu.be/bfLdY
 </p>
