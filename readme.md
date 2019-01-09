@@ -10,7 +10,7 @@
 
 This is a repository to accompany a scientometric review of all GWAS by M.C. Mills and C. Rahal. The article which corresponds to this repository is now published Open Access in [Communications Biology!](https://www.nature.com/commsbio/). A 'shortlink' to the paper can be found here:
 <p align="center">
-[https://rdcu.be/bfLdY](https://rdcu.be/bfLdY)
+https://rdcu.be/bfLdY
 </p>
 . Please see the notebook (and associated paper) for a description of what the code does, but in summary, it undertakes a systematic data-driven review of all GWAS as of 27/10/2018. This repo can be cloned and ran on-the-fly as required to update the results with only minimal adjustments. Dictionaries for regular expression based exercises will be maintained as new Catalog releases introduce new terms needing normalization. Please raise all issues related to the code here in this repo.
 
