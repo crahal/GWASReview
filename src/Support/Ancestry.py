@@ -70,7 +70,6 @@ def dict_replace(text):
                    'Sub African': 'Sub-saharan African',
                    'Erasmus Rucphen Family': 'Erasmus Rucphen',
                    'Nfolk Island': 'Norfolk Island',
-                   'Israeli': 'Isreali',
                    'Sh Asian': 'Asian',
                    'Hispanic Latino': 'Hispanic/Latino',
                    'Hispanic Latino': 'Hispanic/Latino',
